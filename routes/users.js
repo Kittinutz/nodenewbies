@@ -9,5 +9,7 @@ module.exports = (app)=>{
 	res.send(users);
 	});
 	app.get('/api/user',UserController.getuser);
-	app.post('/api/user',UserController.register);
+	app.post('/api/user',(req,res,next)=>{
+		console.log(req.body);
+	});
 }
