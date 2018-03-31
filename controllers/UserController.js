@@ -5,6 +5,6 @@ const models = require('../models/Providers');
 }
 exports.register = async (req,res,next)=>{
      console.log(req.body);
-   res.send(req.body);
-
+    const response = await  models.User.create(req.body);
+    res.send(response);
 };
