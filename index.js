@@ -6,12 +6,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const user = require('./routes/users.js');
 const PORT = 5000;
-user(app);
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+user(app);
 
 const server = http.createServer(app);
 server.listen(PORT,()=>{
